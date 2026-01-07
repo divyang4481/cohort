@@ -59,3 +59,9 @@ appsettings.Local.*.json
 !.vscode/extensions.json
 !.vscode/launch.json
 !.vscode/tasks.json
+src/Cohort.Idp/cohort.idp.db
+src/Cohort.Web/cohort-web.db
+web_out.txt
+web_err.txt
+restore_log.txt
+idp_out.txt
