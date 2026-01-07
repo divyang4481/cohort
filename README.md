@@ -171,3 +171,4 @@ For local development, Cohort.Web seeds `admin@example.com` and `host@example.co
 - Stop the app
 - Delete `cohort-web.db` from the working directory you run the app from
 - Start the app again (it will recreate the DB in Development)
+- Test divyang
