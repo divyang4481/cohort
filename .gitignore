@@ -1,0 +1,61 @@
+# === Core build outputs (dotnet) ===
+[Bb]in/
+[Oo]bj/
+out/
+**/*.Build.csproj.FileListAbsolute.txt
+
+# === Visual Studio / Rider / tooling ===
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.DotSettings.user
+
+# === Logs & diagnostics ===
+*.log
+logs/
+TestResult*/
+*.trx
+*.coverage*
+*.dump
+
+# === OS junk ===
+[Dd]esktop.ini
+[Tt]humbs.db
+*.DS_Store
+
+# === Packages & caches (Node/Angular) ===
+node_modules/
+.npm/
+.pnpm-store/
+.eslintcache
+.stylelintcache
+.angular/
+.yarn/
+.yarn-cache/
+
+# === Angular build artifacts ===
+dist/
+dist-ssr/
+coverage/
+.tmp/
+
+# Angular output embedded into Cohort.Web (keep other static assets in wwwroot)
+/src/Cohort.Web/wwwroot/app/
+/src/Cohort.Web/wwwroot/ClientApp/
+
+# === Environment / secrets ===
+.env
+.env.*
+!.env.example
+appsettings.*.local.json
+appsettings.Local.*.json
+
+# === Editors ===
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json

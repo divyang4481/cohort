@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Create quiz";
+}
+
+<h1>Create quiz</h1>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+
+    <div>
+        <label for="title">Title</label>
+        <input id="title" name="title" />
+        @Html.ValidationMessage("title")
+    </div>
+
+    <div>
+        <label for="durationSeconds">Duration (seconds)</label>
+        <input id="durationSeconds" name="durationSeconds" type="number" min="10" max="3600" value="60" />
+        @Html.ValidationMessage("durationSeconds")
+    </div>
+
+    <button type="submit">Create</button>
+</form>
+
+<p>
+    <a asp-area="Host" asp-controller="Quizzes" asp-action="Index">Back</a>
+</p>

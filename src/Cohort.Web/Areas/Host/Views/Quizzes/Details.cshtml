@@ -1,0 +1,27 @@
+@model Cohort.Web.Data.Entities.Quiz
+
+@{
+    ViewData["Title"] = "Quiz details";
+    var joinUrl = (string?)ViewData["JoinUrl"];
+}
+
+<h1>@Model.Title</h1>
+
+<p>Duration: @Model.DurationSeconds seconds</p>
+<p>Join code: <strong>@Model.JoinCode</strong></p>
+<p>Status: <strong>@(Model.IsStarted ? "Started" : "Not started")</strong></p>
+
+@if (!string.IsNullOrWhiteSpace(joinUrl))
+{
+    <p>Join URL: <a href="@joinUrl">@joinUrl</a></p>
+    <img alt="QR" src="@Url.Action("Qr", "Quizzes", new { area = "Host", id = Model.Id })" />
+}
+
+<form method="post" asp-area="Host" asp-controller="Quizzes" asp-action="Start" asp-route-id="@Model.Id">
+    @Html.AntiForgeryToken()
+    <button type="submit" @(Model.IsStarted ? "disabled" : "")>Start quiz</button>
+</form>
+
+<p>
+    <a asp-area="Host" asp-controller="Quizzes" asp-action="Index">Back</a>
+</p>

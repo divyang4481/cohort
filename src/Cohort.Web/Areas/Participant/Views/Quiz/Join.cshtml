@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Join quiz";
+
+    var code = (string?)ViewData["Code"] ?? "";
+    var quizTitle = (string?)ViewData["QuizTitle"] ?? "Quiz";
+    var oidcLoginUrl = (string?)ViewData["OidcLoginUrl"] ?? "/auth/login";
+    var roomUrl = Url.Action("Room", "Quiz", new { area = "Participant", code }) ?? "/participant";
+}
+
+<h1>Join: @quizTitle</h1>
+
+<p>Code: <strong>@code</strong></p>
+
+<h2>Option 1: Login with OIDC</h2>
+<p>
+    <a href="@oidcLoginUrl">Login</a>
+</p>
+
+<h2>Option 2: Continue anonymously</h2>
+<form method="post" asp-area="Participant" asp-controller="Home" asp-action="SignIn">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="returnUrl" value="@roomUrl" />
+
+    <div>
+        <label for="name">Name</label>
+        <input id="name" name="name" />
+        @Html.ValidationMessage("name")
+    </div>
+
+    <button type="submit">Continue</button>
+</form>

@@ -1,0 +1,293 @@
+Using launch settings from src\Cohort.Idp\Properties\launchSettings.json...
+Building...
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+warn: Microsoft.EntityFrameworkCore.Query[10102]
+      The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."FirstName"
+      FROM "AspNetUsers" AS "a"
+      LIMIT @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 17)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."EmpId", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+      FROM "AspNetUsers" AS "a"
+      WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 16)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."EmpId", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+      FROM "AspNetUsers" AS "a"
+      WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__identifier_0='?' (Size = 10)], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."ApplicationType", "o"."ClientId", "o"."ClientSecret", "o"."ClientType", "o"."ConcurrencyToken", "o"."ConsentType", "o"."DisplayName", "o"."DisplayNames", "o"."JsonWebKeySet", "o"."Permissions", "o"."PostLogoutRedirectUris", "o"."Properties", "o"."RedirectUris", "o"."Requirements", "o"."Settings"
+      FROM "OpenIddictApplications" AS "o"
+      WHERE "o"."ClientId" = @__identifier_0
+      LIMIT 1
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: https://localhost:5001
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\workspace\CTS\cohort\src\Cohort.Idp
+info: OpenIddict.Server.OpenIddictServerDispatcher[6053]
+      The request URI matched a server endpoint: Configuration.
+info: OpenIddict.Server.OpenIddictServerDispatcher[6066]
+      The configuration request was successfully extracted: {}.
+info: OpenIddict.Server.OpenIddictServerDispatcher[6067]
+      The configuration request was successfully validated.
+info: OpenIddict.Server.OpenIddictServerDispatcher[6142]
+      The response was successfully returned as a JSON document: {
+        "issuer": "https://localhost:5001/",
+        "authorization_endpoint": "https://localhost:5001/connect/authorize",
+        "token_endpoint": "https://localhost:5001/connect/token",
+        "end_session_endpoint": "https://localhost:5001/connect/logout",
+        "jwks_uri": "https://localhost:5001/.well-known/jwks",
+        "grant_types_supported": [
+          "authorization_code"
+        ],
+        "response_types_supported": [
+          "code"
+        ],
+        "response_modes_supported": [
+          "query",
+          "form_post",
+          "fragment"
+        ],
+        "scopes_supported": [
+          "openid",
+          "profile",
+          "email"
+        ],
+        "claims_supported": [
+          "aud",
+          "exp",
+          "iat",
+          "iss",
+          "sub"
+        ],
+        "id_token_signing_alg_values_supported": [
+          "RS256"
+        ],
+        "code_challenge_methods_supported": [
+          "plain",
+          "S256"
+        ],
+        "subject_types_supported": [
+          "public"
+        ],
+        "prompt_values_supported": [
+          "consent",
+          "login",
+          "none",
+          "select_account"
+        ],
+        "token_endpoint_auth_methods_supported": [
+          "client_secret_post",
+          "private_key_jwt",
+          "client_secret_basic"
+        ],
+        "require_pushed_authorization_requests": false,
+        "claims_parameter_supported": false,
+        "request_parameter_supported": false,
+        "request_uri_parameter_supported": false,
+        "tls_client_certificate_bound_access_tokens": false,
+        "authorization_response_iss_parameter_supported": true
+      }.
+info: OpenIddict.Server.OpenIddictServerDispatcher[6053]
+      The request URI matched a server endpoint: JsonWebKeySet.
+info: OpenIddict.Server.OpenIddictServerDispatcher[6068]
+      The JSON Web Key Set request was successfully extracted: {}.
+info: OpenIddict.Server.OpenIddictServerDispatcher[6069]
+      The JSON Web Key Set request was successfully validated.
+info: OpenIddict.Server.OpenIddictServerDispatcher[6142]
+      The response was successfully returned as a JSON document: {
+        "keys": [
+          {
+            "kid": "CF10B481C3443ADD07E917A38576824459028193",
+            "use": "sig",
+            "kty": "RSA",
+            "alg": "RS256",
+            "e": "AQAB",
+            "n": "pgy1xw5OcsZabHsuCrTufXxW29AnZNEc5bYdFsPwzCFrOrDp45BSpYNf3xaWREVzIHNz0F_gUiaVDXUDTSZ0l4dIhv4lUroJ6CoeqGA0boyf-YECelTlBRU_mUhg1rNUUsLexdYcvs1YtjaY88MmLf_UINVxzxATqhlYEVaw0JDo1eLG3BTSmh2F7OSRUZVdEbMaOhDq0f0-hrzKlOcRPU7C7R2qwWRUskRRptAU1DaWN8C5JQz0_3r0v6nsWcpfo_sNbhgAa2QrVK8QtrYew9hMKAnCy-5P054NTGGrE0jRc1fMohp9BCjW709-8TnThIyK4zNP4Nrb4Zio-kuA_Q",
+            "x5t": "zxC0gcNEOt0H6RejhXaCRFkCgZM",
+            "x5c": [
+              "MIIC9DCCAdygAwIBAgIIDb/s6b04sAowDQYJKoZIhvcNAQELBQAwMDEuMCwGA1UEAxMlT3BlbklkZGljdCBTZXJ2ZXIgU2lnbmluZyBDZXJ0aWZpY2F0ZTAeFw0yNjAxMDYxNTU2MjNaFw0yODAxMDYxNTU2MjNaMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCmDLXHDk5yxlpsey4KtO59fFbb0Cdk0Rzlth0Ww/DMIWs6sOnjkFKlg1/fFpZERXMgc3PQX+BSJpUNdQNNJnSXh0iG/iVSugnoKh6oYDRujJ/5gQJ6VOUFFT+ZSGDWs1RSwt7F1hy+zVi2NpjzwyYt/9Qg1XHPEBOqGVgRVrDQkOjV4sbcFNKaHYXs5JFRlV0Rsxo6EOrR/T6GvMqU5xE9TsLtHarBZFSyRFGm0BTUNpY3wLklDPT/evS/qexZyl+j+w1uGABrZCtUrxC2th7D2EwoCcLL7k/Tng1MYasTSNFzV8yiGn0EKNbvT37xOdOEjIrjM0/g2tvhmKj6S4D9AgMBAAGjEjAQMA4GA1UdDwEB/wQEAwIHgDANBgkqhkiG9w0BAQsFAAOCAQEABAqU/6nfNo8JnKUahf6SiukkIr5nntQbjxDe96NV7SuQngPlXT4/5b8uPpoQTqgTwXXJ6JVbPVx0jtrmsgE/lX84vla09RSL658WL7DVsUgG1lXJuo2VvEZztk8JMjAufY5R0SYOc3ezr9unK3XkeTR5ET80B5dj6QfzVLmxd5j2Iwfor0dX8eF5GFstwtDZNqsjh6pXJYaBF+vFTsm8GHuzJM4ndlXlN+jHslIhaD1w8xYMl1VNfcmHese0ToLo8HtidoKHgxvN7ofpS9UMDfzr+MtV+wWoDvUQY2TKMqYttGdGD2zUra6ZFa/jZULn5wHnYrJfOs9OyXR1pO2J/A=="
+            ]
+          }
+        ]
+      }.
+info: OpenIddict.Server.OpenIddictServerDispatcher[6053]
+      The request URI matched a server endpoint: Authorization.
+info: OpenIddict.Server.OpenIddictServerDispatcher[6030]
+      The authorization request was successfully extracted: {
+        "client_id": "cohort-web",
+        "redirect_uri": "https://localhost:5003/signin-oidc",
+        "response_type": "code",
+        "scope": "openid profile email",
+        "code_challenge": "LqKmG_Avkz-lYAM-1Q9G3X7E5HGrj2nVT-YPDKHbdfw",
+        "code_challenge_method": "S256",
+        "response_mode": "form_post",
+        "nonce": "639033288702458910.ODhhOTc4MTktN2Q0ZS00NGE0LTk4ZmEtNTQ0OWViMTgyODgzOWRmMDY0YzctNGQ5Yi00NTk0LTk5NzAtYjAzMjFmZDRlNjI4",
+        "state": "CfDJ8PCl9TDxMpdFhAj61ETks_FaMYKM8zpIyjUlEcUp09QI3BYwY8to_RWDDBB1P4JCpclUQHRST7AgUPA_ot6AsWRKtGFR7-ZxDaMYZXFtzXmFNnD03Q_ZTXcAAXrDjfe8HUlOUetvcvNi5GLvyroqUpfspzzBDycxBVqPlmelcT_Iq6Am_W4Lqt6fSLHWGGITwyAuAEXhAlsvJZ6Bf_6ikiTlfjVF7OCQ4RSratjdBfMw7l-cIk0Zq44IqkV6hc-BrW9zaXHYld-2k8pzOjNUjxhzy7GkCsWXZhifgCKlmvor5XO_xeOIMyVS_8YQmyrPZsuBANWOlXKKdMUXxRtBVmrzoDUCgA0H0GRLG8dcsGrVFV7qufpuGvcbVUitRZi0tA",
+        "x-client-SKU": "ID_NET8_0",
+        "x-client-ver": "7.1.2.0"
+      }.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__identifier_0='?' (Size = 10)], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."ApplicationType", "o"."ClientId", "o"."ClientSecret", "o"."ClientType", "o"."ConcurrencyToken", "o"."ConsentType", "o"."DisplayName", "o"."DisplayNames", "o"."JsonWebKeySet", "o"."Permissions", "o"."PostLogoutRedirectUris", "o"."Properties", "o"."RedirectUris", "o"."Requirements", "o"."Settings"
+      FROM "OpenIddictApplications" AS "o"
+      WHERE "o"."ClientId" = @__identifier_0
+      LIMIT 1
+info: OpenIddict.Server.OpenIddictServerDispatcher[6031]
+      The authorization request was successfully validated.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 16)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."EmpId", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+      FROM "AspNetUsers" AS "a"
+      WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+      FROM "AspNetUserClaims" AS "a"
+      WHERE "a"."UserId" = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a0"."Name"
+      FROM "AspNetUserRoles" AS "a"
+      INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+      WHERE "a"."UserId" = @__userId_0
+info: OpenIddict.Server.OpenIddictServerDispatcher[6053]
+      The request URI matched a server endpoint: Authorization.
+info: OpenIddict.Server.OpenIddictServerDispatcher[6030]
+      The authorization request was successfully extracted: {
+        "client_id": "cohort-web",
+        "redirect_uri": "https://localhost:5003/signin-oidc",
+        "response_type": "code",
+        "scope": "openid profile email",
+        "code_challenge": "LqKmG_Avkz-lYAM-1Q9G3X7E5HGrj2nVT-YPDKHbdfw",
+        "code_challenge_method": "S256",
+        "response_mode": "form_post",
+        "nonce": "639033288702458910.ODhhOTc4MTktN2Q0ZS00NGE0LTk4ZmEtNTQ0OWViMTgyODgzOWRmMDY0YzctNGQ5Yi00NTk0LTk5NzAtYjAzMjFmZDRlNjI4",
+        "state": "CfDJ8PCl9TDxMpdFhAj61ETks_FaMYKM8zpIyjUlEcUp09QI3BYwY8to_RWDDBB1P4JCpclUQHRST7AgUPA_ot6AsWRKtGFR7-ZxDaMYZXFtzXmFNnD03Q_ZTXcAAXrDjfe8HUlOUetvcvNi5GLvyroqUpfspzzBDycxBVqPlmelcT_Iq6Am_W4Lqt6fSLHWGGITwyAuAEXhAlsvJZ6Bf_6ikiTlfjVF7OCQ4RSratjdBfMw7l-cIk0Zq44IqkV6hc-BrW9zaXHYld-2k8pzOjNUjxhzy7GkCsWXZhifgCKlmvor5XO_xeOIMyVS_8YQmyrPZsuBANWOlXKKdMUXxRtBVmrzoDUCgA0H0GRLG8dcsGrVFV7qufpuGvcbVUitRZi0tA",
+        "x-client-SKU": "ID_NET8_0",
+        "x-client-ver": "7.1.2.0"
+      }.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__identifier_0='?' (Size = 10)], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."ApplicationType", "o"."ClientId", "o"."ClientSecret", "o"."ClientType", "o"."ConcurrencyToken", "o"."ConsentType", "o"."DisplayName", "o"."DisplayNames", "o"."JsonWebKeySet", "o"."Permissions", "o"."PostLogoutRedirectUris", "o"."Properties", "o"."RedirectUris", "o"."Requirements", "o"."Settings"
+      FROM "OpenIddictApplications" AS "o"
+      WHERE "o"."ClientId" = @__identifier_0
+      LIMIT 1
+info: OpenIddict.Server.OpenIddictServerDispatcher[6031]
+      The authorization request was successfully validated.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+      SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."EmpId", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+      FROM "AspNetUsers" AS "a"
+      WHERE "a"."Id" = @__p_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 36), @p3='?' (DbType = DateTime), @p4='?', @p5='?' (Size = 28), @p6='?' (Size = 5), @p7='?' (Size = 36), @p8='?' (Size = 6)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpenIddictAuthorizations" ("Id", "ApplicationId", "ConcurrencyToken", "CreationDate", "Properties", "Scopes", "Status", "Subject", "Type")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+info: OpenIddict.Server.OpenIddictServerDispatcher[6008]
+      An ad hoc authorization was automatically created and associated with the 'cohort-web' application: 7298c48a-41ba-4e67-a9ad-87824e25e62b.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (14ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 36), @p3='?' (Size = 36), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?' (Size = 5), @p11='?' (Size = 36), @p12='?' (Size = 57)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpenIddictTokens" ("Id", "ApplicationId", "AuthorizationId", "ConcurrencyToken", "CreationDate", "ExpirationDate", "Payload", "Properties", "RedemptionDate", "ReferenceId", "Status", "Subject", "Type")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@p12='?' (Size = 36), @p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 36), @p13='?' (Size = 36), @p3='?' (DbType = DateTime), @p4='?' (DbType = DateTime), @p5='?' (Size = 3067), @p6='?', @p7='?' (DbType = DateTime), @p8='?' (Size = 44), @p9='?' (Size = 5), @p10='?' (Size = 36), @p11='?' (Size = 57)], CommandType='Text', CommandTimeout='30']
+      UPDATE "OpenIddictTokens" SET "ApplicationId" = @p0, "AuthorizationId" = @p1, "ConcurrencyToken" = @p2, "CreationDate" = @p3, "ExpirationDate" = @p4, "Payload" = @p5, "Properties" = @p6, "RedemptionDate" = @p7, "ReferenceId" = @p8, "Status" = @p9, "Subject" = @p10, "Type" = @p11
+      WHERE "Id" = @p12 AND "ConcurrencyToken" = @p13
+      RETURNING 1;
+info: OpenIddict.Server.OpenIddictServerDispatcher[6147]
+      The authorization response was successfully returned to 'https://localhost:5003/signin-oidc' using the form post response mode: {
+        "code": "[redacted]",
+        "state": "CfDJ8PCl9TDxMpdFhAj61ETks_FaMYKM8zpIyjUlEcUp09QI3BYwY8to_RWDDBB1P4JCpclUQHRST7AgUPA_ot6AsWRKtGFR7-ZxDaMYZXFtzXmFNnD03Q_ZTXcAAXrDjfe8HUlOUetvcvNi5GLvyroqUpfspzzBDycxBVqPlmelcT_Iq6Am_W4Lqt6fSLHWGGITwyAuAEXhAlsvJZ6Bf_6ikiTlfjVF7OCQ4RSratjdBfMw7l-cIk0Zq44IqkV6hc-BrW9zaXHYld-2k8pzOjNUjxhzy7GkCsWXZhifgCKlmvor5XO_xeOIMyVS_8YQmyrPZsuBANWOlXKKdMUXxRtBVmrzoDUCgA0H0GRLG8dcsGrVFV7qufpuGvcbVUitRZi0tA",
+        "iss": "https://localhost:5001/"
+      }.
+info: OpenIddict.Server.OpenIddictServerDispatcher[6053]
+      The request URI matched a server endpoint: Token.
+info: OpenIddict.Server.OpenIddictServerDispatcher[6075]
+      The token request was successfully extracted: {
+        "client_id": "cohort-web",
+        "client_secret": "[redacted]",
+        "code": "[redacted]",
+        "grant_type": "authorization_code",
+        "redirect_uri": "https://localhost:5003/signin-oidc",
+        "code_verifier": "aCy28tkZYy2h2BFcBQ7ieWPEd_OUldgOXr06t7JXBdY"
+      }.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__identifier_0='?' (Size = 10)], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."ApplicationType", "o"."ClientId", "o"."ClientSecret", "o"."ClientType", "o"."ConcurrencyToken", "o"."ConsentType", "o"."DisplayName", "o"."DisplayNames", "o"."JsonWebKeySet", "o"."Permissions", "o"."PostLogoutRedirectUris", "o"."Properties", "o"."RedirectUris", "o"."Requirements", "o"."Settings"
+      FROM "OpenIddictApplications" AS "o"
+      WHERE "o"."ClientId" = @__identifier_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__identifier_0='?' (Size = 44)], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."ApplicationId", "o"."AuthorizationId", "o"."ConcurrencyToken", "o"."CreationDate", "o"."ExpirationDate", "o"."Payload", "o"."Properties", "o"."RedemptionDate", "o"."ReferenceId", "o"."Status", "o"."Subject", "o"."Type", "o0"."Id", "o0"."ApplicationType", "o0"."ClientId", "o0"."ClientSecret", "o0"."ClientType", "o0"."ConcurrencyToken", "o0"."ConsentType", "o0"."DisplayName", "o0"."DisplayNames", "o0"."JsonWebKeySet", "o0"."Permissions", "o0"."PostLogoutRedirectUris", "o0"."Properties", "o0"."RedirectUris", "o0"."Requirements", "o0"."Settings", "o1"."Id", "o1"."ApplicationId", "o1"."ConcurrencyToken", "o1"."CreationDate", "o1"."Properties", "o1"."Scopes", "o1"."Status", "o1"."Subject", "o1"."Type"
+      FROM "OpenIddictTokens" AS "o"
+      LEFT JOIN "OpenIddictApplications" AS "o0" ON "o"."ApplicationId" = "o0"."Id"
+      LEFT JOIN "OpenIddictAuthorizations" AS "o1" ON "o"."AuthorizationId" = "o1"."Id"
+      WHERE "o"."ReferenceId" = @__identifier_0
+      LIMIT 1
+info: OpenIddict.Server.OpenIddictServerDispatcher[6076]
+      The token request was successfully validated.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p12='?' (Size = 36), @p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 36), @p13='?' (Size = 36), @p3='?' (DbType = DateTime), @p4='?' (DbType = DateTime), @p5='?' (Size = 3067), @p6='?', @p7='?' (DbType = DateTime), @p8='?' (Size = 44), @p9='?' (Size = 8), @p10='?' (Size = 36), @p11='?' (Size = 57)], CommandType='Text', CommandTimeout='30']
+      UPDATE "OpenIddictTokens" SET "ApplicationId" = @p0, "AuthorizationId" = @p1, "ConcurrencyToken" = @p2, "CreationDate" = @p3, "ExpirationDate" = @p4, "Payload" = @p5, "Properties" = @p6, "RedemptionDate" = @p7, "ReferenceId" = @p8, "Status" = @p9, "Subject" = @p10, "Type" = @p11
+      WHERE "Id" = @p12 AND "ConcurrencyToken" = @p13
+      RETURNING 1;
+info: OpenIddict.Core.OpenIddictTokenManager[6168]
+      The token '1aaa4eef-6039-4099-a5d9-a5df6e3eb485' was successfully marked as redeemed.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 36), @p3='?' (Size = 36), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?' (Size = 5), @p11='?' (Size = 36), @p12='?' (Size = 45)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpenIddictTokens" ("Id", "ApplicationId", "AuthorizationId", "ConcurrencyToken", "CreationDate", "ExpirationDate", "Payload", "Properties", "RedemptionDate", "ReferenceId", "Status", "Subject", "Type")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 36), @p3='?' (Size = 36), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?' (Size = 5), @p11='?' (Size = 36), @p12='?' (Size = 41)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpenIddictTokens" ("Id", "ApplicationId", "AuthorizationId", "ConcurrencyToken", "CreationDate", "ExpirationDate", "Payload", "Properties", "RedemptionDate", "ReferenceId", "Status", "Subject", "Type")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+info: OpenIddict.Server.OpenIddictServerDispatcher[6142]
+      The response was successfully returned as a JSON document: {
+        "access_token": "[redacted]",
+        "token_type": "Bearer",
+        "expires_in": 3600,
+        "scope": "openid profile email",
+        "id_token": "[redacted]"
+      }.
+info: OpenIddict.Server.OpenIddictServerDispatcher[6053]
+      The request URI matched a server endpoint: Authorization.
+info: OpenIddict.Server.OpenIddictServerDispatcher[6030]
+      The authorization request was successfully extracted: {
+        "client_id": "cohort-web",
+        "redirect_uri": "https://localhost:5003/signin-oidc",
+        "response_type": "code",
+        "scope": "openid profile email",
+        "code_challenge": "3xeojOKAnpmusrPHrPLQYcz2xnaKWMGSGewKeZI_gpY",
+        "code_challenge_method": "S256",
+        "response_mode": "form_post",
+        "nonce": "639033289632191798.YTJkYzU0ZDEtYWMxMC00NTNkLWI3OTktMjQxZTE2MzlkMjJjYjMwMGM3MmItNzQ2My00NzFlLTk0MmQtZDE5YjM5ZTJlYTQ2",
+        "state": "CfDJ8PCl9TDxMpdFhAj61ETks_EbpzFUGnKQsn78hD7BdeKhbg6vk51l37hjEnqxGJy0GcP24pfh1Ns6OdIjk2A04JjxGzqnwUNwxRmKDdnfj4Yfye-DIl1TtrebuG91PX8DSfMT0b1qLCk8EFZiJrPEvEToFMROJMtlT2aQ2aNPikOScVhOabdo93NBx8NJsfYEPFfPv0taX_84EA8PQwMSbU-hKGusUK8sLiDQ0mbeqfHnyhW7EbJ4ayWwDHTfqq2jLwpMY069EuQIpagkdl1XVNUgzJGWdn5PrFEy_FPtgyzdJk7HLcjxsOIoQDWyxhfC8DampXVeS42gM2J8SjzRNh4f1LCkbEtC8Vn-zzJCHYAcu65_tYGUz4aM8Bsrgz21vQ",
+        "x-client-SKU": "ID_NET8_0",
+        "x-client-ver": "7.1.2.0"
+      }.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__identifier_0='?' (Size = 10)], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."ApplicationType", "o"."ClientId", "o"."ClientSecret", "o"."ClientType", "o"."ConcurrencyToken", "o"."ConsentType", "o"."DisplayName", "o"."DisplayNames", "o"."JsonWebKeySet", "o"."Permissions", "o"."PostLogoutRedirectUris", "o"."Properties", "o"."RedirectUris", "o"."Requirements", "o"."Settings"
+      FROM "OpenIddictApplications" AS "o"
+      WHERE "o"."ClientId" = @__identifier_0
+      LIMIT 1
+info: OpenIddict.Server.OpenIddictServerDispatcher[6031]
+      The authorization request was successfully validated.

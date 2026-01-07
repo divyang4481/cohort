@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Participant Sign In";
+}
+
+<h1>Participant Sign In</h1>
+
+<p>Enter your name to continue as an anonymous participant.</p>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <div>
+        <label for="name">Name</label>
+        <input id="name" name="name" />
+        @Html.ValidationMessage("name")
+    </div>
+    <button type="submit">Continue</button>
+</form>

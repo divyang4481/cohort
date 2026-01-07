@@ -1,0 +1,70 @@
+@model Cohort.Web.Data.Entities.Quiz
+
+@{
+    ViewData["Title"] = "Quiz room";
+    var startedMs = Model.StartedUtc?.ToUnixTimeMilliseconds() ?? 0;
+}
+
+<h1>@Model.Title</h1>
+
+<div id="status"></div>
+<div id="timer"></div>
+
+@section Scripts {
+    <script src="/assets/vendor/signalr.min.js"></script>
+    <script>
+        (function () {
+            const joinCode = "@Model.JoinCode";
+            const durationSeconds = @Model.DurationSeconds;
+            let startedAtMs = @startedMs;
+
+            const statusEl = document.getElementById('status');
+            const timerEl = document.getElementById('timer');
+
+            function render() {
+                if (!startedAtMs) {
+                    statusEl.textContent = 'Waiting for host to start the quiz...';
+                    timerEl.textContent = '';
+                    return;
+                }
+
+                statusEl.textContent = 'Quiz started';
+
+                const endMs = startedAtMs + (durationSeconds * 1000);
+                const remainingMs = endMs - Date.now();
+                const remainingSec = Math.max(0, Math.ceil(remainingMs / 1000));
+                timerEl.textContent = 'Time remaining: ' + remainingSec + 's';
+            }
+
+            render();
+            setInterval(render, 500);
+
+            if (startedAtMs) {
+                return;
+            }
+
+            if (!window.signalR) {
+                statusEl.textContent = 'SignalR client not found (missing /assets/vendor/signalr.min.js).';
+                return;
+            }
+
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl('/hubs/quiz')
+                .withAutomaticReconnect()
+                .build();
+
+            connection.on('QuizStarted', function (startedUtcMs, durationSecondsFromServer) {
+                startedAtMs = startedUtcMs;
+                render();
+            });
+
+            connection.start()
+                .then(function () {
+                    return connection.invoke('JoinQuiz', joinCode);
+                })
+                .catch(function (err) {
+                    statusEl.textContent = 'Failed to connect for live updates.';
+                });
+        })();
+    </script>
+}

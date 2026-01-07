@@ -1,0 +1,38 @@
+<div class="container py-3" style="max-width: 720px;">
+  <h2 class="mb-3">Create Quiz</h2>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input class="form-control" [(ngModel)]="title" />
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Quiz duration (seconds)</label>
+          <input class="form-control" type="number" [(ngModel)]="durationSeconds" />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Default question timeout (seconds)</label>
+          <input class="form-control" type="number" [(ngModel)]="defaultQuestionTimeoutSeconds" />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Target number of questions (optional)</label>
+        <input class="form-control" type="number" [(ngModel)]="targetQuestionCount" />
+        <div class="form-text">Use this to plan how many questions you intend to add.</div>
+      </div>
+
+      @if (error()) {
+        <div class="alert alert-danger">{{ error() }}</div>
+      }
+
+      <div class="d-flex gap-2">
+        <button class="btn btn-primary" (click)="create()" [disabled]="saving()">Create</button>
+        <a class="btn btn-outline-secondary" routerLink="/host/quizzes">Cancel</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container py-3">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="m-0">Host Quizzes</h2>
+    <a class="btn btn-primary" routerLink="/host/quizzes/new">New quiz</a>
+  </div>
+
+  @if (loading()) {
+    <div>Loading…</div>
+  } @else if (error()) {
+    <div class="alert alert-danger">{{ error() }}</div>
+  } @else {
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Join Code</th>
+          <th>Target Questions</th>
+          <th>Started</th>
+          <th>Published</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (q of quizzes(); track q.id) {
+          <tr>
+            <td>{{ q.title }}</td>
+            <td class="text-nowrap">{{ q.joinCode }}</td>
+            <td>{{ q.targetQuestionCount ?? '—' }}</td>
+            <td>{{ q.isStarted ? 'Yes' : 'No' }}</td>
+            <td>{{ q.isPublished ? 'Yes' : 'No' }}</td>
+            <td class="text-end">
+              <a class="btn btn-sm btn-outline-secondary" [routerLink]="['/host/quizzes', q.id]">Details</a>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>

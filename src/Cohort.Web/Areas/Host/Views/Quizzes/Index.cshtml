@@ -1,0 +1,42 @@
+@model IReadOnlyList<Cohort.Web.Data.Entities.Quiz>
+
+@{
+    ViewData["Title"] = "Quizzes";
+}
+
+<h1>Quizzes</h1>
+
+<p>
+    <a asp-area="Host" asp-controller="Quizzes" asp-action="Create">Create quiz</a>
+</p>
+
+@if (Model.Count == 0)
+{
+    <p>No quizzes yet.</p>
+}
+else
+{
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Duration (sec)</th>
+            <th>Join code</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var q in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-area="Host" asp-controller="Quizzes" asp-action="Details" asp-route-id="@q.Id">@q.Title</a>
+                </td>
+                <td>@q.DurationSeconds</td>
+                <td>@q.JoinCode</td>
+                <td>@(q.IsStarted ? "Started" : "Not started")</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,15 @@
+@using Cohort.Shared.Auth
+@using System.Security.Claims
+@{
+    ViewData["Title"] = "Participant";
+    var displayName = User.FindFirstValue(AuthConstants.Claims.DisplayName) ?? User.Identity?.Name ?? "Participant";
+    var mode = User.FindFirstValue(AuthConstants.Claims.ParticipantMode) ?? "oidc";
+}
+
+<h1>Participant Area</h1>
+<p>Signed in as: <strong>@displayName</strong> (mode: @mode)</p>
+
+<form asp-action="SignOutParticipant" method="post">
+    @Html.AntiForgeryToken()
+    <button type="submit">Sign out</button>
+</form>

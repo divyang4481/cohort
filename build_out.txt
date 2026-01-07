@@ -1,0 +1,20 @@
+  Cohort.Shared -> C:\workspace\CTS\cohort\src\Cohort.Shared\bin\Debug\net8.0\Cohort.Shared.dll
+C:\workspace\CTS\cohort\src\Cohort.Web\Data\CohortWebDbContext.cs(34,30): error CS1061: 'Quiz' does not contain a definition for 'Participants' and no accessible extension method 'Participants' accepting a first argument of type 'Quiz' could be found (are you missing a using directive or an assembly reference?) [C:\workspace\CTS\cohort\src\Cohort.Web\Cohort.Web.csproj]
+C:\workspace\CTS\cohort\src\Cohort.Web\Program.cs(440,20): error CS0266: Cannot implicitly convert type 'Microsoft.AspNetCore.Http.IResult' to 'System.Threading.Tasks.Task'. An explicit conversion exists (are you missing a cast?) [C:\workspace\CTS\cohort\src\Cohort.Web\Cohort.Web.csproj]
+C:\workspace\CTS\cohort\src\Cohort.Web\Program.cs(440,20): error CS1662: Cannot convert lambda expression to intended delegate type because some of the return types in the block are not implicitly convertible to the delegate return type [C:\workspace\CTS\cohort\src\Cohort.Web\Cohort.Web.csproj]
+C:\workspace\CTS\cohort\src\Cohort.Web\Program.cs(442,16): error CS0266: Cannot implicitly convert type 'Microsoft.AspNetCore.Http.IResult' to 'System.Threading.Tasks.Task'. An explicit conversion exists (are you missing a cast?) [C:\workspace\CTS\cohort\src\Cohort.Web\Cohort.Web.csproj]
+C:\workspace\CTS\cohort\src\Cohort.Web\Program.cs(442,16): error CS1662: Cannot convert lambda expression to intended delegate type because some of the return types in the block are not implicitly convertible to the delegate return type [C:\workspace\CTS\cohort\src\Cohort.Web\Cohort.Web.csproj]
+C:\workspace\CTS\cohort\src\Cohort.Web\Program.cs(440,33): warning CS8604: Possible null reference argument for parameter 'path' in 'IResult Results.File(string path, string? contentType = null, string? fileDownloadName = null, DateTimeOffset? lastModified = null, EntityTagHeaderValue? entityTag = null, bool enableRangeProcessing = false)'. [C:\workspace\CTS\cohort\src\Cohort.Web\Cohort.Web.csproj]
+
+Build FAILED.
+
+C:\workspace\CTS\cohort\src\Cohort.Web\Program.cs(440,33): warning CS8604: Possible null reference argument for parameter 'path' in 'IResult Results.File(string path, string? contentType = null, string? fileDownloadName = null, DateTimeOffset? lastModified = null, EntityTagHeaderValue? entityTag = null, bool enableRangeProcessing = false)'. [C:\workspace\CTS\cohort\src\Cohort.Web\Cohort.Web.csproj]
+C:\workspace\CTS\cohort\src\Cohort.Web\Data\CohortWebDbContext.cs(34,30): error CS1061: 'Quiz' does not contain a definition for 'Participants' and no accessible extension method 'Participants' accepting a first argument of type 'Quiz' could be found (are you missing a using directive or an assembly reference?) [C:\workspace\CTS\cohort\src\Cohort.Web\Cohort.Web.csproj]
+C:\workspace\CTS\cohort\src\Cohort.Web\Program.cs(440,20): error CS0266: Cannot implicitly convert type 'Microsoft.AspNetCore.Http.IResult' to 'System.Threading.Tasks.Task'. An explicit conversion exists (are you missing a cast?) [C:\workspace\CTS\cohort\src\Cohort.Web\Cohort.Web.csproj]
+C:\workspace\CTS\cohort\src\Cohort.Web\Program.cs(440,20): error CS1662: Cannot convert lambda expression to intended delegate type because some of the return types in the block are not implicitly convertible to the delegate return type [C:\workspace\CTS\cohort\src\Cohort.Web\Cohort.Web.csproj]
+C:\workspace\CTS\cohort\src\Cohort.Web\Program.cs(442,16): error CS0266: Cannot implicitly convert type 'Microsoft.AspNetCore.Http.IResult' to 'System.Threading.Tasks.Task'. An explicit conversion exists (are you missing a cast?) [C:\workspace\CTS\cohort\src\Cohort.Web\Cohort.Web.csproj]
+C:\workspace\CTS\cohort\src\Cohort.Web\Program.cs(442,16): error CS1662: Cannot convert lambda expression to intended delegate type because some of the return types in the block are not implicitly convertible to the delegate return type [C:\workspace\CTS\cohort\src\Cohort.Web\Cohort.Web.csproj]
+    1 Warning(s)
+    5 Error(s)
+
+Time Elapsed 00:00:01.63
